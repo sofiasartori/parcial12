@@ -4,11 +4,11 @@ export class Producto {
   id: number;
   descripcion: string;
   tipo: string;
-  fechaDeVencimiento: Date;
+  fechaDeVencimiento: string;
   precio: number;
   rutaDeFoto: string;
 
-  public constructor(id: number, descripcion: string, tipo: string, fechaDeVencimiento: Date, precio: number, rutaDeFoto: string){
+  public constructor(id: number, descripcion: string, tipo: string, fechaDeVencimiento: string, precio: number, rutaDeFoto: string){
     this.id = id;
     this.descripcion = descripcion;
     this.tipo = tipo;

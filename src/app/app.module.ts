@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductoSeleccionadoComponent } from './producto-seleccionado.component';
 import { FormsModule } from '@angular/forms';
-import { Producto } from './producto';
+import { ProductoComponent } from './producto/producto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductoSeleccionadoComponent
+    ProductoSeleccionadoComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,
@@ -25,4 +26,3 @@ import { Producto } from './producto';
 })
 
 export class AppModule { }
-export class Producto { }

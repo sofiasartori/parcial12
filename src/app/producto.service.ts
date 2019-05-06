@@ -15,9 +15,11 @@ export class ProductoService {
 
   traertodos(ruta: string, filtro: string) {
     return this.miHttp.traerProductos('productos/').then(data => {
-      console.log('produtcos service', data);
+      console.log('productos service', data);
       return data;
     });
-
-  }
+ }
+ insertar(ruta: string, producto: any){
+  return this.miHttp.insertarProductos('productos/', producto);
+ }
 }

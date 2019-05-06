@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { log } from 'util';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -13,6 +13,7 @@ import { throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class MiHttpService {
+  private options = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
 
   constructor( public http: HttpClient ) { }
 
@@ -34,6 +35,19 @@ export class MiHttpService {
       return data;
     });
   }
+
+  public httpPostP2( url: string, objeto: any )
+  {
+    let header = new Headers();
+    header.set
+    return this.http
+    .post( url,objeto,this.options )
+    .subscribe( data => {
+      console.log( data );
+      return data;
+    });
+  }
+
 
   public httpGetO ( url: string): Observable<any>
   {

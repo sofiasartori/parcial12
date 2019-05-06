@@ -1,0 +1,36 @@
+<div *ngIf="!nuevoProducto">
+
+
+  <button class="btn btn-lg btn-warning btn-block"  (click)="hacerNuevoProducto()">Nuevo </button>
+
+
+</div>
+<div *ngIf="nuevoProducto">
+  <h2>{{nuevoProducto.id}} Id</h2>
+  <div>
+    <label>Descripcion:
+      <input [(ngModel)]="nuevoProducto.descripcion" placeholder="Descripcion">
+    </label>
+  </div>
+  <div>
+      <label>Tipo:
+        <select [(ngModel)]="nuevoProducto.tipo" >
+          <option value="liquido">Líquido</option>
+          <option value="solido">Sólido</option>
+        </select>        
+      </label>
+    </div>
+    <div>
+      <label>Fecha de vencimiento:
+        <input [(ngModel)]="nuevoProducto.fechaDeVencimiento" placeholder="aaaa-mm-dd">
+      </label>
+    </div>
+    <div>
+      <label>Precio:
+        <input [(ngModel)]="nuevoProducto.precio" placeholder="Precio">
+      </label>
+    </div>
+    <img class="card-img-top" src="/assets/pordefecto.png" alt="Card image" style="width:70px">
+    <button class="btn btn-lg btn-success btn-block"  (click)="crearProducto()">Crear</button>
+</div>
+

@@ -7,6 +7,7 @@
       <th>Fecha de vencimiento</th>
       <th>Precio</th>
       <th>Foto</th>
+      <th>Eliminar</th>
     </tr>
   </thead>
   <tbody>
@@ -17,10 +18,21 @@
       <td>{{producto.fechaDeVencimiento}} </td>
       <td>{{producto.precio}} </td>
       <td><img class="fotoproducto" [src]="producto.rutaDeFoto" /> </td>
+      <td><button (click)="remove(producto)">-</button></td>
     </tr>
   </tbody>
 </table>
-<button [class.selected]="producto === productoSeleccionado" (click)="onSelect(Producto)"></button>
-<app-producto-seleccionado [Producto]="productoSeleccionado"></app-producto-seleccionado>
+<section class="widget clearfix" >
+  <h4 class="widgettitle">Alta </h4>
+    <div>
+      <app-producto></app-producto>
+    </div>  
+</section>
+<!--<section class="widget clearfix" >
+  <h4 class="widgettitle">Baja</h4>
+    <div>
+      <app-producto></app-producto>
+    </div>  
+</section>-->
 <router-outlet></router-outlet>
 

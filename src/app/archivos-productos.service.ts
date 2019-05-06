@@ -24,4 +24,10 @@ export class ArchivosProductosService {
       console.log( err );
     })
   }
+
+  public insertarProductos(ruta, objeto) {
+    console.log('objeto:' + JSON.stringify(objeto));
+    return this.miHttp.httpPostP2(this.api + ruta, JSON.stringify(objeto));
+    
+  }
 }
