@@ -1,6 +1,7 @@
 import { ProductoSeleccionadoComponent } from './producto-seleccionado.component';
 import { ProductoService } from './producto.service';
 import { Component, OnInit } from '@angular/core';
+import { EliminarProductoComponent } from './eliminar-producto/eliminar-producto.component';
 
 
 
@@ -14,6 +15,7 @@ export class AppComponent implements OnInit {
   title = 'parcial';
   listado: any;
   miProductoServicio: ProductoService;
+  eliminarProd: EliminarProductoComponent;
 
   constructor(serviceProducto: ProductoService) {
     this.miProductoServicio = serviceProducto;
@@ -29,4 +31,5 @@ export class AppComponent implements OnInit {
       console.log(data)
     })
   }
+
 }

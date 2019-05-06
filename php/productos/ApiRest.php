@@ -14,6 +14,8 @@ $app = new \Slim\App(["settings" => $config]);
 $app->group('/productos', function () {
 
   $this->get('/', \ProductoApi::class . ':traerTodos');
+  $this->delete('/{id}', \ProductoApi::class . ':borrarUno');
+  $this->get('/{descripcion}', \ProductoApi::class . ':buscarUno');
 })->add(\MWparaCORS::class . ':HabilitarCORSTodos');
 
 $app->run();

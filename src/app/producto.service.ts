@@ -22,4 +22,12 @@ export class ProductoService {
  insertar(ruta: string, producto: any){
   return this.miHttp.insertarProductos('productos/', producto);
  }
+
+ borrar(ruta: string, id: number){
+  return this.miHttp.borrarProducto('productos/', id);
+ }
+
+ buscar(ruta: string, desc: string){
+   return this.miHttp.buscarProducto('productos/', desc);
+ }
 }

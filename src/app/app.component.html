@@ -18,7 +18,7 @@
       <td>{{producto.fechaDeVencimiento}} </td>
       <td>{{producto.precio}} </td>
       <td><img class="fotoproducto" [src]="producto.rutaDeFoto" /> </td>
-      <td><button (click)="remove(producto)">-</button></td>
+      <td><app-eliminar-producto [producto]="producto.id"></app-eliminar-producto></td>
     </tr>
   </tbody>
 </table>
@@ -28,6 +28,13 @@
       <app-producto></app-producto>
     </div>  
 </section>
+
+<section class="widget clearfix" >
+    <h4 class="widgettitle">Buscar</h4>
+      <div>
+        <app-buscar-producto></app-buscar-producto>
+      </div>  
+  </section>
 <!--<section class="widget clearfix" >
   <h4 class="widgettitle">Baja</h4>
     <div>

@@ -2,6 +2,12 @@
 require_once ('AccesoDatos.php');
 class Producto
 {
+	public $id;
+	public $descripcion;
+	public $tipo;
+	public $fechaDeVencimiento;
+	public $precio;
+	public $rutaDeFoto;
 
     public function traerTodosProductos(){
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
@@ -24,5 +30,19 @@ class Producto
 		echo json_encode($miArray);
 		
 		
+	}
+
+	public function borrarProducto($id){
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("DELETE FROM productos.producto where id=$id");
+		$consulta->execute();
+	}
+
+	public function buscarProducto($descripcion){
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("SELECT * FROM productos.producto where descripcion='$descripcion'");
+		$consulta->execute();
+		$productoBuscado= $consulta->fetchObject('Producto');
+		return $productoBuscado;
 	}
 }

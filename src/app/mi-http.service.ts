@@ -17,10 +17,10 @@ export class MiHttpService {
 
   constructor( public http: HttpClient ) { }
 
-  public httpGetP ( url: string)
+  public httpGetP ( url: string, descripcion:string)
   {
     return this.http
-    .get( url )
+    .get( url + descripcion )
     .toPromise()
     .then( this.extractData )
     .catch( this.handleError );
@@ -48,6 +48,17 @@ export class MiHttpService {
     });
   }
 
+  public httpDelete( url: string, id: number )
+  {
+    let header = new Headers();
+    header.set
+    return this.http
+    .delete( url + id, this.options )
+    .subscribe( data => {
+      console.log( data );
+      return data;
+    });
+  }
 
   public httpGetO ( url: string): Observable<any>
   {

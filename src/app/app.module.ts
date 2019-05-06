@@ -7,12 +7,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductoSeleccionadoComponent } from './producto-seleccionado.component';
 import { FormsModule } from '@angular/forms';
 import { ProductoComponent } from './producto/producto.component';
+import { EliminarProductoComponent } from './eliminar-producto/eliminar-producto.component';
+import { BuscarProductoComponent } from './buscar-producto/buscar-producto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductoSeleccionadoComponent,
-    ProductoComponent
+    ProductoComponent,
+    EliminarProductoComponent,
+    BuscarProductoComponent
   ],
   imports: [
     BrowserModule,
