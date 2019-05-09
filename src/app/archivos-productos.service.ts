@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class ArchivosProductosService {
 
-  api = 'http://localhost:8080/productos/apirest.php/';
+  api = 'http://localhost/productos/apirest.php/';
   peticion: any;
   constructor( public miHttp: MiHttpService ) {
   }

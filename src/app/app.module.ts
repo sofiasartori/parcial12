@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductoComponent } from './producto/producto.component';
 import { EliminarProductoComponent } from './eliminar-producto/eliminar-producto.component';
 import { BuscarProductoComponent } from './buscar-producto/buscar-producto.component';
+import { MostrarProductoComponent } from './mostrar-producto/mostrar-producto.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BuscarProductoComponent } from './buscar-producto/buscar-producto.compo
     ProductoSeleccionadoComponent,
     ProductoComponent,
     EliminarProductoComponent,
-    BuscarProductoComponent
+    BuscarProductoComponent,
+    MostrarProductoComponent
   ],
   imports: [
     BrowserModule,

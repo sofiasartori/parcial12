@@ -1,4 +1,5 @@
 <div>
-  <input placeholder="Descripción del producto">
+  <input placeholder="Descripción del producto" [(ngModel)]="producto">
   <button type="button" class= "btn" (click)="onClickButton()">Buscar</button>
+  <app-button (onClick)="functioncall($event)" [label]="label"></app-button>
 </div>
