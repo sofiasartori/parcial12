@@ -40,7 +40,7 @@
     <h4 class="widgettitle">Producto: </h4>
       <div>
         <!-- Solo se va a mostrar si se devolvio algun producto -->
-        <app-mostrar-producto productoBuscado="productoBuscado"></app-mostrar-producto>
+        <app-mostrar-producto [productoBuscado]="productoBuscado"></app-mostrar-producto>
       </div>  
 </section>
 
@@ -48,6 +48,13 @@
   <h4 class="widgettitle">Alta venta</h4>
     <div>
       <app-ventas></app-ventas>
+    </div>  
+</section>
+
+<section class="widget clearfix" >
+  <h4 class="widgettitle">Ventas</h4>
+    <div>
+      <app-mostrar-ventas></app-mostrar-ventas>
     </div>  
 </section>
 <!--<section class="widget clearfix" >

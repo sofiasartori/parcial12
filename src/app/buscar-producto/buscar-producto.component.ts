@@ -24,6 +24,7 @@ export class BuscarProductoComponent implements OnInit {
     this.miProductoServicio.buscar('productos/', this.producto).then(data => {
       if(data.status == 500){
         console.log('nada');
+        this.buscar.emit(null);
       }
       else{
         this.buscar.emit(data);

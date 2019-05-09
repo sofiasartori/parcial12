@@ -10,6 +10,7 @@ import { EliminarProductoComponent } from './eliminar-producto/eliminar-producto
 import { BuscarProductoComponent } from './buscar-producto/buscar-producto.component';
 import { MostrarProductoComponent } from './mostrar-producto/mostrar-producto.component';
 import { VentasComponent } from './ventas/ventas.component';
+import { MostrarVentasComponent } from './mostrar-ventas/mostrar-ventas.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { VentasComponent } from './ventas/ventas.component';
     EliminarProductoComponent,
     BuscarProductoComponent,
     MostrarProductoComponent,
-    VentasComponent
+    VentasComponent,
+    MostrarVentasComponent
   ],
   imports: [
     BrowserModule,

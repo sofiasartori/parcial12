@@ -10,7 +10,6 @@ import { ProductoService } from '../producto.service';
 export class EliminarProductoComponent implements OnInit {
 
   @Input() producto: number;
-  @Output() onClick = new EventEmitter<any>();
   miProductoServicio: ProductoService;
 
   constructor(serviceProducto: ProductoService) {

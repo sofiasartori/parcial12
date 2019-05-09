@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Venta } from '../venta';
-import { ProductoService } from '../producto.service';
+import { VentasService } from '../ventas.service';
 import { Validators, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-ventas',
@@ -9,13 +10,11 @@ import { Validators, FormBuilder, FormControl, FormGroup } from '@angular/forms'
   styleUrls: ['./ventas.component.css']
 })
 export class VentasComponent implements OnInit {
-
-  
-miProductoServicio: ProductoService;
-
+miVentaServicio: VentasService;
 nuevaVenta: Venta;
-  constructor(serviceProducto: ProductoService, private builder: FormBuilder) {
-    this.miProductoServicio = serviceProducto;
+
+  constructor(serviceVentas: VentasService, private builder: FormBuilder) {
+    this.miVentaServicio = serviceVentas;
    }   
 
   id = new FormControl('', [
@@ -31,7 +30,7 @@ nuevaVenta: Venta;
   ]);
 
 
-  altaForm: FormGroup = this.builder.group({
+  nuevaForm: FormGroup = this.builder.group({
     id: this.id,
     fechaCompra: this.fechaCompra,
     cantidad: this.cantidad    
@@ -43,12 +42,8 @@ nuevaVenta: Venta;
 
   crearVenta()
   {
-    //hacer cosas
-    let id:number =Math.floor((Math.random() * 1000) + 1);
-    this.nuevaVenta.id=id;
-    
-    
-    this.miProductoServicio.insertar('ventas/nueva', this.nuevaVenta);
+    console.log(JSON.stringify(this.nuevaVenta));
+    this.miVentaServicio.insertar('ventas/nueva', this.nuevaVenta);
     this.nuevaVenta=null;
   }
   hacerNuevaVenta()

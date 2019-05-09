@@ -1,0 +1,18 @@
+<table class="table table-condensed" style="border-width: 2px; border-color: black; border-style: solid;">
+  <thead>
+    <tr>
+      <th>Id Producto</th>
+      <th>Fecha de compra</th>
+      <th>Cantidad</th>
+      <th>Foto Producto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let venta of listado" >
+      <td>{{venta.id_producto}} </td>
+      <td>{{venta.fechaDeVenta}} </td>
+      <td>{{venta.cantidad}} </td>
+      <td><img class="fotoproducto" [src]="venta.rutaDeFoto" /> </td>
+    </tr>
+  </tbody>
+</table>

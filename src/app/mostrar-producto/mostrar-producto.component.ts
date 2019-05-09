@@ -10,7 +10,6 @@ export class MostrarProductoComponent implements OnInit {
   buscarProd: BuscarProductoComponent;
   @Input() productoBuscado :any;
   constructor() { 
-    this.ngOnInit();
   }
 
   ngOnInit() {
@@ -19,7 +18,7 @@ export class MostrarProductoComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges) {
 
-    console.log('productoBuscado: ' , this.productoBuscado)
+    console.log('productoBuscado: ' , JSON.stringify(this.productoBuscado));
     }
 
 }
