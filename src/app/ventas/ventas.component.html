@@ -1,0 +1,25 @@
+<div *ngIf="!nuevaVenta">
+
+
+  <button class="btn btn-lg btn-warning btn-block"  (click)="hacerNuevaVenta()">Nueva</button>
+
+
+</div>
+<div *ngIf="nuevaVenta">
+  <h2>Id</h2>
+  <form [formGroup]="altaForm" class="modal-content animate" (ngSubmit)="crearVenta()" >
+    <div class="container">
+      <label><b>Id Producto:</b></label>
+      <input type="text" [(ngModel)]="nuevaVenta.descripcion" placeholder="id" [formControl]="descripcion" required>
+      <label>Fecha de compra:
+        <input [(ngModel)]="nuevaVenta.fechaDeCompra" placeholder="aaaa-mm-dd" [formControl]="fechaCompra" required>
+      </label>
+      <label>Cantidad:
+        <input [(ngModel)]="nuevaVenta.precio" placeholder="Cantidad" [formControl]="cantidad" required>
+      </label>
+      <div>
+        <button type="submit" [disabled]="!altaForm.valid">Crear</button>
+      </div>
+    </div>
+  </form>
+  </div>

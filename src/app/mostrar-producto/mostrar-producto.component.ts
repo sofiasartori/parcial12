@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { BuscarProductoComponent } from '../buscar-producto/buscar-producto.component';
 
 @Component({
@@ -8,9 +8,18 @@ import { BuscarProductoComponent } from '../buscar-producto/buscar-producto.comp
 })
 export class MostrarProductoComponent implements OnInit {
   buscarProd: BuscarProductoComponent;
-  constructor() { }
+  @Input() productoBuscado :any;
+  constructor() { 
+    this.ngOnInit();
+  }
 
   ngOnInit() {
+    console.log("prodB: " + this.productoBuscado);
   }
+
+  ngOnChanges(changes: SimpleChanges) {
+
+    console.log('productoBuscado: ' , this.productoBuscado)
+    }
 
 }

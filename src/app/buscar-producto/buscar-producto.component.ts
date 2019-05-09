@@ -8,8 +8,8 @@ import { MostrarProductoComponent } from '../mostrar-producto/mostrar-producto.c
   styleUrls: ['./buscar-producto.component.css']
 })
 export class BuscarProductoComponent implements OnInit {
-  @Input() producto: string;
-  @Output() onClick = new EventEmitter<any>();
+  producto: string = '';
+  @Output() buscar = new EventEmitter<any>();
   miProductoServicio: ProductoService;
   mostrarProducto: MostrarProductoComponent;
   constructor(serviceProducto: ProductoService) { 
@@ -25,8 +25,10 @@ export class BuscarProductoComponent implements OnInit {
       if(data.status == 500){
         console.log('nada');
       }
-      else
-        this.onClick.emit(this.mostrarProducto.ngOnInit());
+      else{
+        this.buscar.emit(data);
+      }
+        
     })
   }
 }

@@ -1,13 +1,41 @@
 <div *ngIf="!nuevoProducto">
 
 
-  <button class="btn btn-lg btn-warning btn-block"  (click)="hacerNuevoProducto()">Nuevo </button>
+  <button class="btn btn-lg btn-warning btn-block"  (click)="hacerNuevoProducto()">Nuevo</button>
 
 
 </div>
 <div *ngIf="nuevoProducto">
-  <h2>{{nuevoProducto.id}} Id</h2>
-  <div>
+  <h2>Id</h2>
+  <form [formGroup]="altaForm" class="modal-content animate" (ngSubmit)="crearProducto()" >
+    <div class="container">
+      <label><b>Descripcion:</b></label>
+      <input type="text" [(ngModel)]="nuevoProducto.descripcion" placeholder="descripcion" [formControl]="descripcion" required>
+
+      <label><b>Tipo:</b></label>
+      <select [(ngModel)]="nuevoProducto.tipo"  [formControl]="tipo" required>
+        <option value="liquido">Líquido</option>
+        <option value="solido">Sólido</option>
+      </select>
+      <!--<label><b>Repita la clave</b></label>
+      <input type="password" placeholder="Aca repeti la misma clave  de arriba"  [formControl]="copiaClave" name="psw-repeat" required>
+      <div>
+        <button type="submit" class="signupbtn" [disabled]="!registroForm.valid">Registrarme</button>
+      </div>-->
+      <label>Fecha de vencimiento:
+        <input [(ngModel)]="nuevoProducto.fechaDeVencimiento" placeholder="aaaa-mm-dd" [formControl]="fecha" required>
+      </label>
+      <label>Precio:
+        <input [(ngModel)]="nuevoProducto.precio" placeholder="Precio" [formControl]="precio" required>
+      </label>
+      <div>
+        <button type="submit" [disabled]="!altaForm.valid">Crear</button>
+      </div>
+    </div>
+  </form>
+  </div>
+  
+  <!--<div>
     <label>Descripcion:
       <input [(ngModel)]="nuevoProducto.descripcion" placeholder="Descripcion">
     </label>
@@ -32,5 +60,5 @@
     </div>
     <img class="card-img-top" src="/assets/pordefecto.png" alt="Card image" style="width:70px">
     <button class="btn btn-lg btn-success btn-block"  (click)="crearProducto()">Crear</button>
-</div>
+</div>-->
 

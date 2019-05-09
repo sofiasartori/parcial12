@@ -41,7 +41,7 @@ export class ArchivosProductosService {
     return this.miHttp.httpGetP(this.api + ruta, desc)
     .then( data => {
       console.log('Archivo productos');
-     // console.log( data );
+      //console.log( data );
       return data;
     }, err => {
       console.log( err );

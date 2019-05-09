@@ -20,7 +20,7 @@ export class ProductoService {
     });
  }
  insertar(ruta: string, producto: any){
-  return this.miHttp.insertarProductos('productos/', producto);
+  return this.miHttp.insertarProductos('productos/alta', producto);
  }
 
  borrar(ruta: string, id: number){

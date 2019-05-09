@@ -4,27 +4,28 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductoSeleccionadoComponent } from './producto-seleccionado.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductoComponent } from './producto/producto.component';
 import { EliminarProductoComponent } from './eliminar-producto/eliminar-producto.component';
 import { BuscarProductoComponent } from './buscar-producto/buscar-producto.component';
 import { MostrarProductoComponent } from './mostrar-producto/mostrar-producto.component';
+import { VentasComponent } from './ventas/ventas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductoSeleccionadoComponent,
     ProductoComponent,
     EliminarProductoComponent,
     BuscarProductoComponent,
-    MostrarProductoComponent
+    MostrarProductoComponent,
+    VentasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
