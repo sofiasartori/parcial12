@@ -39,6 +39,7 @@ export class ArchivosProductosService {
 
   public buscarProducto(ruta, desc){
     return this.miHttp.httpGetP(this.api + ruta, desc)
+    .toPromise()
     .then( data => {
       console.log('Archivo productos');
       //console.log( data );

@@ -22,14 +22,14 @@ export class BuscarProductoComponent implements OnInit {
   public onClickButton() {
     console.log("producto: " + this.producto);
     this.miProductoServicio.buscar('productos/', this.producto).then(data => {
-      if(data.status == 500){
+      if(data == 500){
         console.log('nada');
         this.buscar.emit(null);
       }
       else{
+        console.log(data);
         this.buscar.emit(data);
-      }
-        
+      }        
     })
   }
 }

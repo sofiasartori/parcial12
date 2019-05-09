@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { log } from 'util';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -13,17 +13,22 @@ import { throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class MiHttpService {
+  
+
   private options = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
 
   constructor( public http: HttpClient ) { }
 
   public httpGetP ( url: string, descripcion:string)
   {
-    return this.http
-    .get( url + descripcion )
+    /*return this.http
+    .get( url + descripcion)
     .toPromise()
     .then( this.extractData )
-    .catch( this.handleError );
+    .catch( this.handleError );*/
+    return this.http.get( url + descripcion)
+      .map( ( res: Response ) => res)
+      .catch( ( err: any ) => throwError(err || 'Server error'));
   }
 
   public httpPostP( url: string, objeto: any )
